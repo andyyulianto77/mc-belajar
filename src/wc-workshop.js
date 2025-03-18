@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import "./nasa-image.js";
 
 export class WcWorkshop extends LitElement {
   static get properties() {
@@ -64,9 +65,10 @@ export class WcWorkshop extends LitElement {
     </details>
     <div class="results">
       ${this.items.map((item, index) => html`
-        <div>
-          ${item.data[0].title}
-        </div>
+        <nasa-image
+         source="${item.links[0].href}"
+         title="${item.data[0].title}"
+         ></nasa-image>
       `)}
     </div>
     `;
